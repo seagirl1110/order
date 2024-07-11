@@ -5,6 +5,8 @@
 }
 
 .order-container {
+  display: grid;
+  gap: 30px;
   padding: 8px;
 }
 
@@ -34,7 +36,35 @@
 }
 .form__btn-submit {
   border: none;
+  outline: none;
+  border-radius: 10px;
   background-color: #2eb9e7;
   color: white;
   cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 175px;
+}
+
+.action-btn {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #2eb9e7;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
 }/*# sourceMappingURL=style.css.map */

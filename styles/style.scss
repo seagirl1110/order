@@ -15,7 +15,23 @@
     border-radius: 10px;
 }
 
+@mixin action-btn() {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #2eb9e7;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+}
+
 .order-container {
+    display: grid;
+    gap: 30px;
     padding: 8px;
 }
 
@@ -41,9 +57,15 @@
     /* .form__btn-submit */
 
     &__btn-submit {
-        border: none;
-        background-color: #2eb9e7;
-        color: white;
-        cursor: pointer;
+        @include action-btn();
     }
+}
+
+.buttons-container {
+    @include flex-container-column();
+    max-width: 175px;
+}
+
+.action-btn {
+    @include action-btn();
 }
