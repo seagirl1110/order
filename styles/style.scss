@@ -27,6 +27,10 @@
     align-items: center;
     justify-content: center;
     height: 36px;
+
+    &:hover {
+        background-color: #1994bd;
+    }
 }
 
 .order-container {
@@ -64,6 +68,11 @@
 .buttons-container {
     @include flex-container-column();
     max-width: 175px;
+    display: none;
+
+    &--open {
+        display: flex;
+    }
 }
 
 .action-btn {
