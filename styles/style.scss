@@ -3,3 +3,47 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+@mixin flex-container-column() {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@mixin border() {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.order-container {
+    padding: 8px;
+}
+
+.form-container {
+    @include flex-container-column();
+    @include border();
+    max-width: 350px;
+    padding: 15px;
+}
+
+.form {
+    @include flex-container-column();
+
+    /* .form__input */
+
+    &__input {
+        @include border();
+        outline: none;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    /* .form__btn-submit */
+
+    &__btn-submit {
+        border: none;
+        background-color: #2eb9e7;
+        color: white;
+        cursor: pointer;
+    }
+}
