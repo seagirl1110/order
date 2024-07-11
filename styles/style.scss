@@ -10,12 +10,19 @@
     gap: 15px;
 }
 
+@mixin flex-container-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @mixin border() {
     border: 1px solid black;
     border-radius: 10px;
 }
 
 @mixin action-btn() {
+    @include flex-container-center();
     border: none;
     outline: none;
     border-radius: 10px;
@@ -23,9 +30,7 @@
     color: white;
     cursor: pointer;
     font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     height: 36px;
 
     &:hover {
@@ -35,6 +40,7 @@
 
 .order-container {
     display: grid;
+    grid-template-columns: auto 300px;
     gap: 30px;
     padding: 8px;
 }
@@ -70,6 +76,8 @@
     max-width: 175px;
     display: none;
 
+    /* .buttons-container--open */
+
     &--open {
         display: flex;
     }
@@ -77,4 +85,52 @@
 
 .action-btn {
     @include action-btn();
+}
+
+.notifications-container {
+    @include flex-container-column();
+    grid-row-start: 1;
+    grid-column-start: 2;
+}
+
+.notification {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 2px #000000;
+    color: #ffffff;
+    padding: 12px;
+    display: grid;
+    gap: 8px 16px;
+    align-items: center;
+    grid-template-columns: 36px 1fr 18px;
+
+    /* .notification__btn-close */
+    /* .notification__check */
+
+    &__btn-close,
+    &__check {
+        @include flex-container-center();
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    /* .notification__btn-close */
+
+    &__btn-close {
+        font-size: 18px;
+        align-self: flex-start;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        cursor: pointer;
+    }
+
+    /* .notification__check */
+
+    &__check {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 50%;
+        height: 36px;
+    }
 }
